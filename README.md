@@ -77,3 +77,28 @@ Content-Type: application/json
 {
   "image": "<base64-encoded-image>"
 }
+```
+## API Endpoints
+
+### `POST /detectCircles`
+- **Description**: Detects circles in an uploaded image.
+- **Request Body**:
+  - `image` (string, required): The base64-encoded image to process.
+- **Response**:
+  - `circleCount` (integer): The number of circles detected.
+  - `processedImage` (string): The processed image (base64-encoded) with circles highlighted.
+
+## Code Explanation
+
+### Python Script (`detect_circles.py`)
+- Loads an image using `cv2.imread`.
+- Converts the image to grayscale and applies a blur.
+- Uses the `HoughCircles` method to detect circles.
+- Draws circles on the original image and saves it back.
+- Outputs the number of detected circles in JSON format.
+
+### Firebase Function (`index.ts`)
+- Handles POST requests using Firebase Cloud Functions.
+- Writes the base64-encoded image to a temporary location (`/tmp/image.jpg`).
+- Invokes the Python script to detect circles.
+- Returns the processed image and circle count as a JSON response.
