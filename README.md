@@ -40,8 +40,8 @@ Ensure that you have the following installed on your local machine:
 ### Steps
 1. Clone the repository:
     ```bash
-    git clone <repository-url>
-    cd <repository-directory>
+    git clone https://github.com/Sumitk99/circuilize_firebase_cloud.git
+    cd circuilize_firebase_cloud
     ```
 
 2. Install the required dependencies:
